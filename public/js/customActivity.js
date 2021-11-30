@@ -63,12 +63,18 @@ define([
 
         console.log(inArguments);
 
+        var test = '';
+
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                
+                if(key == 'test'){
+                    test = val;
+                }
               
             });
         });
+
+        $('#test').val(test);
 
         connection.trigger('updateButton', {
             button: 'next',
@@ -95,6 +101,10 @@ define([
         }];
         
         payload['metaData'].isConfigured = true;
+
+        var test = $('#test').val();
+
+        payload['arguments'].execute.inArguments.push({"test": test });
 
         console.log(payload);
         connection.trigger('updateActivity', payload);
