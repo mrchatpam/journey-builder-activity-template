@@ -7,6 +7,12 @@ const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
 var util = require('util');
 var http = require('https');
 
+var tokenRequestData={
+    "grant_type": "client_credentials",
+    "client_id": "k0gzswryeavkyw2xx49yz6kr",
+    "client_secret": "pFnIWHClb3jGUyVReaNOGifr"
+};
+
 exports.logExecuteData = [];
 
 function logData(req) {
