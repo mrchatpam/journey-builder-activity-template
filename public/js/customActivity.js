@@ -11,6 +11,12 @@ define([
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
+
+    //running modal
+    connection.on('initActivityRunningModal', initialize);
+    //hover modal
+    connection.on('initActivityRunningHover', initialize);
+    
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
     connection.on('requestedInteraction', onRequestedInteraction);
